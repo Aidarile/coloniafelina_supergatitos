@@ -1,0 +1,47 @@
+<div class="app-wrapper">
+
+  <!-- Spinner (aparece de forma global)--> 
+   <app-spinner [isLoading]="isLoading"></app-spinner>
+
+  <div class="container mt-2">
+    <app-navbar></app-navbar>
+
+    <!-- Animación al cambiar de página -->
+    <div [ngClass]="animationClass">
+      <router-outlet></router-outlet>
+    </div>  
+  </div>
+
+  <!-- Toast global -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div
+    id="globalToast"
+    class="toast align-items-center text-bg-success border-0 custom-toast"
+    role="alert"
+    aria-live="assertive"
+    aria-atomic="true">
+
+    <div class="d-flex">
+      <div class="toast-body" id="toastBody">Sesión iniciada correctamente</div>
+      <button
+        type="button"
+        class="btn-close btn-close-white me-2 m-auto"
+        data-bs-dismiss="toast"
+        aria-label="Cerrar"
+      ></button>
+    </div>
+  </div>
+</div>
+
+<!-- Boton de Scroll to top -->
+@if (mostrarBotonScroll) {
+  <button
+    class="btn-scroll-top"
+    (click)="scrollToTop()"
+    title="Volver arriba">
+    <fa-icon [icon]="faArrowUp"></fa-icon>
+  </button>
+}
+
+  <app-footer></app-footer>
+</div>

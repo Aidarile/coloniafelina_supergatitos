@@ -1,0 +1,147 @@
+<div class="container mt-4">
+  <h3 class="text-center mb-4">Gestión de gatos</h3>
+
+  <!-- Formulario -->
+  <div class="card p-4 mb-4">
+    <h5>{{ modoEdicion ? 'Editar gato' : 'Añadir nuevo gato' }}</h5>
+
+    <form #form="ngForm" (ngSubmit)="guardarGato(form)" novalidate>
+      <div class="row g-3">
+
+        <!-- Nombre -->
+        <div class="col-md-6">
+          <label class="form-label">Nombre</label>
+          <input type="text" class="form-control" [(ngModel)]="nuevoGato.nombre" name="nombre" required minlength="2" #nombre="ngModel">
+          @if (nombre.invalid && nombre.touched) {
+            <div class="text-danger small">
+              El nombre es obligatorio y debe tener al menos 2 caracteres.
+            </div>
+          }
+        </div>
+
+        <!-- Apodo -->
+        <div class="col-md-6">
+          <label class="form-label">Apodo</label>
+          <input type="text" class="form-control" [(ngModel)]="nuevoGato.apodo" name="apodo">
+        </div>
+
+        <!-- Sexo -->
+        <div class="col-md-6">
+          <label class="form-label">Sexo</label>
+          <select class="form-select" [(ngModel)]="nuevoGato.sexo" name="sexo" required #sexo="ngModel">
+            <option value="">Selecciona</option>
+            <option value="macho">Macho</option>
+            <option value="hembra">Hembra</option>
+            <option value="indeterminado">Indeterminado</option>
+          </select>
+          @if (sexo.invalid && sexo.touched) {
+            <div class="text-danger small">
+              El sexo es obligatorio.
+            </div>
+          }
+        </div>
+
+        <!-- Estado -->
+        <div class="col-md-6">
+          <label class="form-label">Estado</label>
+          <select class="form-select" [(ngModel)]="nuevoGato.estado" name="estado" required #estado="ngModel">
+            <option value="">Selecciona</option>
+            <option value="colonia">Colonia</option>
+            <option value="en_adopcion">En adopción</option>
+            <option value="en_acogida">En acogida</option>
+            <option value="fallecido">Fallecido</option>
+            <option value="acogido">Acogido</option>
+            <option value="adoptado">Adoptado</option>
+            <option value="desaparecido">Desaparecido</option>
+          </select>
+          @if (estado.invalid && estado.touched) {
+            <div class="text-danger small">
+              El estado es obligatorio.
+            </div>
+          }
+        </div>
+
+        <!-- Descripción -->
+        <div class="col-md-12">
+          <label class="form-label">Descripción</label>
+          <textarea class="form-control" name="descripcion" [(ngModel)]="nuevoGato.descripcion" rows="3" required minlength="10" #descripcion="ngModel"></textarea>
+          @if (descripcion.invalid && descripcion.touched) {
+            <div class="text-danger small">
+              La descripción debe tener al menos 10 caracteres.
+            </div>
+          }
+        </div>
+
+        <!-- Motivo -->
+        <div class="col-md-12">
+          <label class="form-label">Motivo</label>
+          <textarea class="form-control" name="motivo" [(ngModel)]="nuevoGato.motivo" rows="3" required minlength="4" #motivo="ngModel"></textarea>
+          @if (motivo.invalid && motivo.touched) {
+            <div class="text-danger small">
+              El motivo debe tener al menos 4 caracteres.
+            </div>
+          }
+        </div>
+
+        <!-- Url imagen -->
+        <div class="col-md-12">
+          <label class="form-label">URL de imagen</label>
+          <input type="url" class="form-control" name="imagen" [(ngModel)]="nuevoGato.imagen" required pattern="https?://.+" #imagen="ngModel" />
+          @if (imagen.invalid && imagen.touched) {
+            <div class="text-danger small">
+              Introduce una URL válida que empiece por http:// o https://
+            </div>
+          }
+        </div>
+
+        <!-- Botones -->
+        <div class="text-center mt-3">
+          <button type="submit" [disabled]="form.invalid" class="btn custom-btn me-2">
+            {{ modoEdicion ? 'Actualizar' : 'Guardar gato' }}
+          </button>
+          @if (modoEdicion) {
+            <button type="button" class="btn btn-secondary" (click)="cancelarEdicion(form)">
+              Cancelar
+            </button>
+          }
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <!-- Lista de gatos -->
+  <div class="row g-4">
+    @for (gato of gatos; track gato._id) {
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <img [src]="gato.imagen" class="card-img-top" [alt]="gato.nombre">
+          <div class="card-body">
+            <h5 class="card-title">{{ gato.nombre }}</h5>
+            <p><strong>Apodo:</strong> {{ gato.apodo }}</p>
+            <p>{{ gato.descripcion }}</p>
+            <p><strong>Sexo:</strong> {{ gato.sexo | titlecase }}</p>
+            <p><strong>Estado:</strong> {{ gato.estado }}</p>
+            <p><strong>Motivo salida:</strong> {{ gato.motivo }}</p>
+
+            <div class="card-buttons mt-auto text-center">
+              <button class="btn custom-edit-btn me-2" (click)="editarGato(gato)">Editar</button>
+              <button class="btn custom-delete-btn" (click)="eliminarGato(gato._id)">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Toast de confirmación de éxito -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+    <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Gato guardado correctamente.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,45 @@
+<div class="container noticias-section">
+
+  @if (noticias.length === 0) {
+    <p class="text-center">No hay noticias disponibles.</p>
+  }
+
+  <div class="row g-4">
+    @for (noticia of noticiasPaginadas; track noticia._id) {
+      <div class="col-md-6 col-lg-3 d-flex">
+        <div class="noticia-card flex-fill d-flex flex-column shadow-sm">
+          @if (noticia.imagen) {
+            <img [src]="noticia.imagen" alt="{{ noticia.titulo }}" class="noticia-imagen">
+          }
+
+          <div class="noticia-body">
+            <h5 class="noticia-titulo">{{ noticia.titulo }}</h5>
+            <p class="noticia-fecha small text-muted mb-2">
+              Publicado el {{ noticia.createdAt | date:"d 'de' MMMM 'de' y":'':'es' }}
+            </p>
+
+            <p class="noticia-texto">
+              {{ noticia.contenido | slice:0:150 }}...
+            </p>
+
+            <button class="custom-edit-btn mt-3" (click)="abrirModal(noticia)">
+              Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+  @if (totalPaginas > 1) {
+    <div class="d-flex justify-content-center mt-4 gap-3">
+      <button class="btn paginacion-btn" [disabled]="paginaActual === 1" (click)="paginaAnterior()">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <span class="align-self-center">Página {{ paginaActual }} de {{ totalPaginas }}</span>
+      <button class="btn paginacion-btn" [disabled]="paginaActual === totalPaginas" (click)="paginaSiguiente()">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  }
+</div>

@@ -1,0 +1,95 @@
+/* Filtros */
+.filtros-row {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.filtros-row select {
+  max-width: 220px;
+  padding: 6px 12px;
+  border: 1px solid #95AE84;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+/* Tarjetas */
+.gato-card {
+  border: none;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gato-foto-container {
+  padding: 15px 0 0 0;
+}
+
+.gato-foto {
+  width: 100%;
+  max-width: 120px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.gato-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.gato-nombre {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #95AE84;
+}
+
+.gato-info p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.btn-apadrinar {
+  background-color: #95AE84;
+  color: white;
+  border: none;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 50px;
+}
+
+.btn-apadrinar:hover {
+  background-color: #c5c0c0;
+}
+
+/* Iconos */
+.icono-arcoiris {
+  font-size: 30px;
+  color: #d28aff;
+  margin-right: 10px;
+}
+
+.icono-fiesta {
+  font-size: 30px;
+  color: #66bb6a;
+  margin-right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}

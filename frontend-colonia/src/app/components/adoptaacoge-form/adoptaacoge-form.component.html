@@ -1,0 +1,115 @@
+<div class="container adoptar-form-container mt-5">
+  <h2 class="text-center mb-4">Formulario de Adopción/Acogida</h2>
+
+<!-- Modal -->
+<div class="custom-modal-backdrop" *ngIf="mostrarModal">
+  <div class="custom-modal">
+    <h5 class="modal-title">🛑 Información importante antes de adoptar o acoger:</h5>
+
+    <div class="modal-text">
+      <p>▪️ Recuerda que adoptar o acoger un gato es un compromiso muy importante.</p>
+      <p>▪️ Piensa que en caso de no poder continuar con la decisión, tendrás que darnos tiempo para buscar otra alternativa para él.</p>
+      <p>▪️ Asegúrate de tener un entorno seguro, tiempo para dedicarle, y muchas ganas de darle amor y cuidados.</p>
+      <p>▪️ En caso de realizar una <strong>ACOGIDA</strong>: Los gastos básicos del animal serán cubiertos por la colonia.</p>
+      <p>▪️ En caso de realizar una <strong>ADOPCIÓN</strong>: Los gastos correrán a cargo del adoptante.</p>
+    </div>
+
+    <p class="modal-final text-center">
+      Este formulario es un primer paso para conocer tu interés y disponibilidad. ¡Gracias! 🐾
+    </p>
+
+    <div class="text-end">
+      <button class="btn custom-btn mt-3" (click)="cerrarModal()">Entendido</button>
+    </div>
+  </div>
+</div>
+
+<!-- Formulario de adopción/acogida -->
+  <form (ngSubmit)="enviarFormulario()" #formRef="ngForm">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input name="from_name" [(ngModel)]="formData.from_name" class="form-control custom-input" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Email</label>
+      <input name="from_email" [(ngModel)]="formData.from_email" type="email" class="form-control custom-input" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Teléfono</label>
+      <input name="telefono" [(ngModel)]="formData.telefono" class="form-control custom-input">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Asunto</label>
+      <input name="subject" [(ngModel)]="formData.subject" class="form-control custom-input" [value]="'Adoptar/Acoger a: ' + nombreGato" readonly required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">¿Qué tipo de ayuda te interesa ofrecer?</label>
+      <select name="tipo_acogida" [(ngModel)]="formData.tipo_acogida" class="form-select custom-input" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="adopcion">Adopción</option>
+        <option value="acogida_temporal">Acogida temporal</option>
+        <option value="acogida_larga">Acogida indefinida</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">¿Qué te motiva a ofrecer esa ayuda?</label>
+      <textarea name="motivacion" [(ngModel)]="formData.motivacion" class="form-control custom-input" rows="2" required></textarea>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">¿Actualmente tienes animales en casa?</label>
+      <select name="animales_casa" [(ngModel)]="formData.animales_casa" class="form-select custom-input" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="no">No</option>
+        <option value="gato">Sí, tengo gato</option>
+        <option value="perro">Sí, tengo perro</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">¿Tienes experiencia previa con gatos?</label>
+      <select name="experiencia_gatos" [(ngModel)]="formData.experiencia_gatos" class="form-select custom-input" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="si">Sí, tengo experiencia</option>
+        <option value="no">No, sería mi primera vez</option>
+        <option value="algo">Algo de experiencia</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">¿Tienes protecciones en ventanas?</label>
+      <select name="protecciones" [(ngModel)]="formData.protecciones" class="form-select custom-input" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="si">Sí</option>
+        <option value="no">No, y no estoy dispuesto/a</option>
+        <option value="pondre">No, pero las pondría antes</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Cuéntame un poco sobre ti:</label>
+      <textarea name="sobre_ti" [(ngModel)]="formData.sobre_ti" class="form-control custom-input" rows="4" required></textarea>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn custom-btn">Enviar</button>
+    </div>
+  </form>
+
+  <!-- Toast de confirmación -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div id="successToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <!-- Mensaje -->
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+</div>

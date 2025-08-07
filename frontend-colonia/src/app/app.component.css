@@ -1,0 +1,28 @@
+.animate__animated {
+    --animate-duration: 0.7s;
+  }
+  
+  .btn-scroll-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #95AE84;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .btn-scroll-top:hover {
+    transform: scale(1.1);
+  }
+  

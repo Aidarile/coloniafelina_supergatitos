@@ -1,0 +1,26 @@
+.historia-container {
+    max-width: 900px;
+    margin: auto;
+    padding-top: 30px;
+  }
+  
+  .historia-img {
+    width: 110%;
+    max-width: 450px;
+  }
+  
+  .historia-text {
+    padding: 10px 20px;
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .historia-text {
+      text-align: center;
+    }
+  
+    .historia-img {
+      margin-bottom: 20px;
+    }
+  }
+  

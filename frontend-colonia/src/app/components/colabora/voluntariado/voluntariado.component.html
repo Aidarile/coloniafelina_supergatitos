@@ -1,0 +1,65 @@
+<div class="container voluntariado-container mt-5">
+    <div class="row">
+
+      <!-- Texto de la izquierda -->
+      <div class="col-md-6 voluntariado-text">
+        <h2 class="mb-3">¿Te gustaría ser voluntario?</h2>
+        <p>
+          En esta sección puedes inscribirte como voluntario. Tu ayuda es esencial para el cuidado de nuestros gatos, 
+          desde alimentación hasta revisiones veterinarias. ¡Únete a esta labor solidaria!
+        </p>
+        <p>
+          Ser voluntario en la colonia felina es una experiencia gratificante: conocerás a nuestros gatos, 
+          aprenderás sobre su cuidado y, sobre todo, ayudarás a mejorar su calidad de vida.
+        </p>
+        <p>
+          No te preocupes, empezarás con labores sencillas. El tiempo que puedas invertir será más que suficiente. A veces parece que
+          hace falta invertir mucho tiempo, pero entre más personas seamos, más repartido estará todo.
+        </p>
+        <p>
+          Estarás acompañado en todo momento.
+        </p>
+        <p>
+          Si te encantaría formar parte de esta comunidad, no dudes en escribirnos 😸
+        </p>
+      </div>
+    
+      <!-- Formulario de contacto de voluntariado (derecha) -->
+      <div class="col-md-6 mt-4 mt-md-0 ps-md-5">
+        <form (ngSubmit)="enviarFormulario()" #formRef="ngForm">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input name="from_name" [(ngModel)]="formData.from_name" class="form-control custom-input" required>
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input name="from_email" [(ngModel)]="formData.from_email" type="email" class="form-control custom-input" required>
+          </div>
+          <div class="mb-3">
+            <label for="asunto" class="form-label">Asunto</label>
+            <input name="subject" [(ngModel)]="formData.subject" class="form-control custom-input" value="Voluntariado" readonly required>
+          </div>
+          <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea name="message" [(ngModel)]="formData.message" class="form-control custom-input" rows="4" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn custom-btn">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast de confirmación -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div id="successToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <!-- Mensaje -->
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+  </div>
+  

@@ -1,0 +1,45 @@
+<div class="container mt-5 panel-container">
+  <h2 class="text-center panel-title mb-4">Panel de Administración</h2>
+
+  <div class="d-flex justify-content-end mb-4">
+    <button class="btn custom-btn" (click)="cerrarSesion()"><strong>X</strong></button>
+  </div>
+
+  <div class="row g-4">
+    <!-- Gestión de Gatos -->
+    <div class="col-md-4">
+      <div class="card admin-card text-center p-4 h-100 d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="mb-3"><strong>Gatos</strong></h4>
+          <p>Crea, modifica o elimina a los gatos de la colonia.</p>
+        </div>
+        <a routerLink="gatos" class="btn custom-btn mt-3">Gestionar gatos</a>
+      </div>
+    </div>
+
+    <!-- Gestión de Artículos -->
+    <div class="col-md-4">
+      <div class="card admin-card text-center p-4 h-100 d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="mb-3"><strong>Artículos solidarios</strong></h4>
+          <p>Crea, modifica o elimina los productos solidarios.</p>
+        </div>
+        <a routerLink="articulos" class="btn custom-btn mt-3">Gestionar artículos</a>
+      </div>
+    </div>
+
+    <!-- Gestión de Noticias -->
+    <div class="col-md-4">
+      <div class="card admin-card text-center p-4 h-100 d-flex flex-column justify-content-between">
+        <div>
+          <h4 class="mb-3"><strong>Noticias</strong></h4>
+          <p>Crea, modifica o elimina noticias.</p>
+        </div>
+        <a routerLink="/noticias-admin" class="btn custom-btn mt-3">Gestionar noticias</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aquí se carga el contenido de rutas hijas -->
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h5 class="modal-title">{{ noticia.titulo }}</h5>
+  <button type="button" class="btn-close" aria-label="Cerrar" (click)="activeModal.dismiss()"></button>
+</div>
+
+<div class="modal-body">
+  @if (noticia.imagen) {
+    <img [src]="noticia.imagen" alt="{{ noticia.titulo }}" class="rounded">
+  }
+
+  <p class="text-muted">
+    Publicado el {{ noticia.createdAt | date:"d 'de' MMMM 'de' y":'':'es' }}
+  </p>
+
+  <div [innerHTML]="noticia.contenido"></div>
+
+  @if (noticia.autor) {
+    <p class="mt-3"><strong>Autor:</strong> {{ noticia.autor }}</p>
+  }
+</div>
+

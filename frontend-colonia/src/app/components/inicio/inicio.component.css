@@ -1,0 +1,10 @@
+.inicio-container {
+    margin-top: 40px;
+    padding-top: 40px;
+}
+
+.inicio-img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}

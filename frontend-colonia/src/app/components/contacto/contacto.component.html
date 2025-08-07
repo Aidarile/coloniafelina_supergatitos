@@ -1,0 +1,57 @@
+<div class="container mt-5 contacto-container">
+    <div class="col-md-7 offset-md-5 text-center">
+        <h2 class="contacto-titulo">Contacto</h2>
+    </div>
+    
+    <div class="row align-items-center">
+
+      <!-- Para poner la info de contacto (izquierda) -->
+      <div class="col-md-6 text-center text-md-start">
+        <p class="pregunta-contacto"><strong>¿Tienes alguna duda?</strong></p>
+        <p>Puedes contactarnos a través del formulario o mandándonos un email.</p>
+        <p class="email-contacto"><strong>Email:</strong></p>
+          <p>supergatitoscallejeros&#64;gmail.com</p>
+      </div>
+      
+      <!-- Formulario de contacto (derecha) -->
+      <div class="col-md-6">
+        <form (ngSubmit)="enviarFormulario()" #formRef="ngForm" class="formulario-contacto">
+          <div class="mb-3">
+            <label>Nombre</label>
+            <input type="text" name="from_name" [(ngModel)]="formData.from_name" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="from_email" [(ngModel)]="formData.from_email" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label>Asunto</label>
+            <input type="text" name="subject" [(ngModel)]="formData.subject" class="form-control" required />
+          </div>
+
+          <div class="mb-3">
+            <label>Mensaje</label>
+            <textarea name="message" [(ngModel)]="formData.message" class="form-control" rows="4" required></textarea>
+          </div>
+
+          <div class="text-center">
+            <button type="submit" class="btn custom-btn">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast de confirmación -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div id="successToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <!-- Mensaje dinámico -->
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+  </div>

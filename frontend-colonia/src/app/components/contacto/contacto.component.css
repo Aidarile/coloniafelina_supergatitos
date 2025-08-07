@@ -1,0 +1,48 @@
+.contacto-titulo {
+  padding-bottom: 30px;
+}
+
+.contacto-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 50px;
+  }
+
+  .custom-input:focus {
+    border-color: #c5c0c0 !important;
+    box-shadow: 0 0 10px #95AE84 !important;
+  }
+
+  .custom-btn {
+    background-color: #95AE84;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+
+  .custom-btn:hover {
+    background-color: #c5c0c0;
+  }
+
+  .pregunta-contacto {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+  
+  .email-contacto {
+    padding-top: 20px;
+    font-size: 1.4rem;
+    color: #333;
+  }
+  
+
+  @media (max-width: 768px) {
+    .contacto-container .row {
+      flex-direction: column;
+      text-align: center;
+    }
+  }

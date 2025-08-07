@@ -1,0 +1,53 @@
+.donaciones-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 10px;
+}
+
+.colabora-card {
+  border: none;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: scale(0.95);
+}
+
+.colabora-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 20px 20px 0 0;
+  display: block;
+}
+
+.custom-btn {
+  background-color: #95AE84;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 50px;
+}
+
+.custom-btn:hover {
+  background-color: #c5c0c0;
+}
+
+.medalla-proximamente {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #dc3545; /* rojo Bootstrap */
+  color: white;
+  padding: 5px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  border-radius: 12px;
+  z-index: 10;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  text-transform: uppercase;
+}

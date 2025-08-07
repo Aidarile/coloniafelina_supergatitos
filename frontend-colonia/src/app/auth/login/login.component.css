@@ -1,0 +1,37 @@
+.login-container {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    padding-top: 50px;
+  }
+  
+  .login-title {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .custom-input:focus {
+    border-color: #c5c0c0 !important;
+    box-shadow: 0 0 10px #95AE84 !important;
+  }
+  
+  .custom-btn {
+    background-color: #95AE84;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 50px;
+  }
+  
+  .custom-btn:hover {
+    background-color: #c5c0c0;
+  }
+  
+  input.form-control:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px white inset !important;
+    box-shadow: 0 0 0 1000px white inset !important;
+    -webkit-text-fill-color: #000 !important;
+  }
+  

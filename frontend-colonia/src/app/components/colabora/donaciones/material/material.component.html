@@ -1,0 +1,73 @@
+<div class="container material-container mt-5">
+    <div class="row">
+  
+      <!-- Texto + lista -->
+      <div class="col-md-6 material-text">
+        <h2 class="mb-3">¿Quieres donar material?</h2>
+        <p>Aunque las donaciones económicas nos ayudan muchísimo, las donaciones de material también son de gran ayuda.</p>
+        <p>Tenemos un listado de Amazon donde puedes enviarnos de forma directa algunos productos que necesitamos 
+            y que a los supergatitos les encanta (como comida o suplementos).</p>
+        <p>Todo apoyo cuenta y puede marcar una gran diferencia para nuestros peluditos. ¡No dudes en preguntarnos! 😻</p>
+        <p>Aquí tienes algunos ejemplos de lo que necesitamos habitualmente:</p>
+  
+        <ul class="material-list text-start">
+            <li>
+              Pienso y latitas
+              <a href="https://www.amazon.es/hz/wishlist/ls/TQH2OJM2H3GC?ref_=wl_share" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-amazon ms-2" title="Ver en Amazon"></i>
+              </a>
+            </li>
+            <li>Mantas y toallas</li>
+            <li>Transportines</li>
+            <li>Camas de tela y casitas de plástico</li>
+            <li>Cuencos para agua y comida</li>
+            <li>
+              Suplementos alimenticios
+              <a href="https://www.amazon.es/hz/wishlist/ls/TQH2OJM2H3GC?ref_=wl_share" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-amazon ms-2" title="Ver en Amazon"></i>
+              </a>
+            </li>
+          </ul>
+
+      </div>
+  
+      <!-- Formulario -->
+      <div class="col-md-6 mt-4 mt-md-0 ps-md-5">
+        <form (ngSubmit)="enviarFormulario()" #formRef="ngForm">
+          <div class="mb-3">
+            <label class="form-label">Nombre</label>
+            <input name="from_name" [(ngModel)]="formData.from_name" class="form-control custom-input" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input name="from_email" [(ngModel)]="formData.from_email" type="email" class="form-control custom-input" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Asunto</label>
+            <input name="subject" [(ngModel)]="formData.subject" class="form-control custom-input" value="Donación de material" readonly required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Mensaje</label>
+            <textarea name="message" [(ngModel)]="formData.message" class="form-control custom-input" rows="4" required></textarea>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn custom-btn">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast de confirmación -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1055">
+  <div id="successToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <!-- Mensaje -->
+      </div>
+      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+    </div>
+  </div>
+</div>
+
+  </div>
+  

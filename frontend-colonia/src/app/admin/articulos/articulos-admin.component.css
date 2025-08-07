@@ -1,0 +1,143 @@
+.container {
+    max-width: 960px;
+    margin: auto;
+  }
+  
+  h3 {
+    color: #5e6e4e;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+  
+  .card form .form-label {
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .card input,
+  .card textarea {
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+  
+  .card textarea {
+    resize: vertical;
+  }
+  
+  .custom-btn {
+    background-color: #95AE84;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    font-size: 15px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-btn:hover {
+    background-color: #c5c0c0;
+  }
+  
+  .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 15px;
+  }
+
+  .card-buttons {
+    margin-top: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #4a4a4a;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #555;
+  }
+
+  .custom-edit-btn {
+    background-color: #95AE84;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-edit-btn:hover {
+    background-color: #7c946e;
+  }
+  
+  .custom-delete-btn {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    font-size: 14px;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .custom-delete-btn:hover {
+    background-color: #c9302c;
+  }
+
+  .card .btn {
+    font-size: 13px;
+    border-radius: 20px;
+    padding: 5px 12px;
+  }
+
+.toast {
+  background-color: #95AE84 !important;
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+}
+
+.toast .btn-close {
+  filter: brightness(0) invert(1); /* X de "cerrar" en blanco */
+}
+
+.toast-body {
+  font-size: 15px;
+  padding: 8px 12px;
+}
+
+  @media (max-width: 768px) {
+    .card-img-top {
+      height: 160px;
+    }
+  
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  

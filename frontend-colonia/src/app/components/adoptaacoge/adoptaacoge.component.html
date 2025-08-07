@@ -1,0 +1,75 @@
+<div class="selector-container text-center my-4">
+  <button
+    class="selector-btn"
+    [class.active]="vistaActual === 'adopcion'"
+    (click)="vistaActual = 'adopcion'"
+  >
+    En adopción
+  </button>
+  <button
+    class="selector-btn"
+    [class.active]="vistaActual === 'acogida'"
+    (click)="vistaActual = 'acogida'"
+  >
+    En acogida
+  </button>
+</div>
+
+<div class="container adoptaacoge-container mt-5">
+  @if (vistaActual === 'adopcion') {
+
+    @if (gatosAdopcion.length > 0) {
+      <p class="text-center">
+        Actualmente, estos supergatitos están buscando una familia que los adopte para siempre.
+        Si quieres ser tú, no dudes en hacer click en "Adoptar" y rellena nuestro formulario.
+      </p>
+
+      <div class="gato-row mb-4">
+        @for (gato of gatosAdopcion; track gato._id) {
+          <div class="card gato-card mb-3">
+            <img [src]="gato.imagen" alt="{{ gato.nombre }}" class="gato-foto" />
+            <div class="card-body">
+              <h4 class="card-title gato-nombre mb-3">{{ gato.nombre | titlecase }}</h4>
+              <p><strong>Descripción:</strong> {{ gato.descripcion }}</p>
+              <p><strong>Motivo:</strong> {{ gato.motivo }}</p>
+              <p><strong>Sexo:</strong> {{ gato.sexo | titlecase }}</p>
+              <a [routerLink]="['/adoptaacoge', gato.nombre]" class="btn custom-btn mt-2">Adoptar</a>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="alert alert-light text-center p-4 mt-4 border rounded shadow-sm">
+        <h5 class="mb-3">😺 ¡Todo bajo control! 😺</h5>
+        <p>En estos momentos, ningún supergatito necesita ser adoptado. ¡Gracias por tu interés! 🐾</p>
+      </div>
+    }
+  } @else {
+
+    @if (gatosAcogida.length > 0) {
+      <p class="text-center">
+        Estos supergatitos necesitan una casa de acogida temporal por motivos de salud, socialización u otros peligros.
+      </p>
+
+      <div class="gato-row mb-4">
+        @for (gato of gatosAcogida; track gato._id) {
+          <div class="card gato-card d-flex flex-row align-items-center mb-3">
+            <img [src]="gato.imagen" alt="{{ gato.nombre }}" class="gato-foto" />
+            <div class="card-body">
+              <h4 class="card-title gato-nombre mb-3">{{ gato.nombre | titlecase }}</h4>
+              <p><strong>Descripción:</strong> {{ gato.descripcion }}</p>
+              <p><strong>Motivo:</strong> {{ gato.motivo }}</p>
+              <p><strong>Sexo:</strong> {{ gato.sexo | titlecase }}</p>
+              <a [routerLink]="['/adoptaacoge', gato.nombre]" class="btn custom-btn mt-2 float-end">Acoger</a>
+            </div>
+          </div>
+        }
+      </div>
+    } @else {
+      <div class="alert alert-light text-center p-4 mt-4 border rounded shadow-sm">
+        <h5 class="mb-3">😺 ¡Todo bajo control! 😺</h5>
+        <p>En estos momentos, ningún supergatito necesita ser acogido. ¡Gracias por tu interés! 🐾</p>
+      </div>
+    }
+  }
+</div>

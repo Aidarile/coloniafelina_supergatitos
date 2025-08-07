@@ -1,0 +1,52 @@
+/* Bordes redondeados y márgenes*/
+.rounded-nav {
+    border-radius: 30px;
+    margin-top: 15px;
+    padding: 7px;
+  }
+  
+  /* Fondo verde suave y texto blanco del navbar */
+  .custom-navbar {
+    background-color: #95AE84;
+    color: white;
+    margin-top: 40px;
+  }
+  
+  /* Estilo general de los enlaces */
+  .custom-navbar .nav-link {
+    color: white;
+    margin: 0 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .custom-navbar .nav-link:hover {
+    color: #e6f2e6;
+    transform: scale(1.05);
+  }
+  
+  /* Centrado del contenido del nav */
+  .navbar-nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Animaciones y estilo del enlace que está activo */
+  .nav-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-link.active {
+    background-color: #95AE84;
+    color: white !important;
+    border-radius: 30px;
+    font-weight: bold;
+    padding: 8px 16px;
+    box-shadow: 0 0 10px rgba(149, 174, 132, 0.6);
+  } 
+  
