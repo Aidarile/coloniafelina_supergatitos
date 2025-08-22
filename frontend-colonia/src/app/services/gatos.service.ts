@@ -2,12 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Gato } from '../common/interfacegatos';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GatosService {
-  private apiUrl = 'http://localhost:3000/gatos';
+  private apiUrl = `${environment.apiBaseUrl}/gatos`;
 
   constructor(private http: HttpClient) { }
 
