@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Gato } from '../../common/interfacegatos';
 import { GatosService } from '../../services/gatos.service';
 import { CommonModule } from '@angular/common';
+import { ImageUrlPipe } from '../../pipes/image-url.pipe';
 
 @Component({
   selector: 'app-finalesfelices',
-  imports: [CommonModule],
+  imports: [CommonModule, ImageUrlPipe],
   templateUrl: './finalesfelices.component.html',
   styleUrl: './finalesfelices.component.css'
 })

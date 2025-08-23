@@ -3,10 +3,11 @@ import { GatosService } from '../../services/gatos.service';
 import { Gato } from '../../common/interfacegatos';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { ImageUrlPipe } from '../../pipes/image-url.pipe';
 
 @Component({
   selector: 'app-adoptaacoge',
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, ImageUrlPipe],
   templateUrl: './adoptaacoge.component.html',
   styleUrl: './adoptaacoge.component.css'
 })

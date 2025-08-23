@@ -27,7 +27,7 @@
       <div class="gato-row mb-4">
         @for (gato of gatosAdopcion; track gato._id) {
           <div class="card gato-card mb-3">
-            <img [src]="gato.imagen" alt="{{ gato.nombre }}" class="gato-foto" />
+            <img [src]="gato.imagen | imageUrl" alt="{{ gato.nombre }}" class="gato-foto" />
             <div class="card-body">
               <h4 class="card-title gato-nombre mb-3">{{ gato.nombre | titlecase }}</h4>
               <p><strong>Descripción:</strong> {{ gato.descripcion }}</p>
@@ -54,7 +54,7 @@
       <div class="gato-row mb-4">
         @for (gato of gatosAcogida; track gato._id) {
           <div class="card gato-card d-flex flex-row align-items-center mb-3">
-            <img [src]="gato.imagen" alt="{{ gato.nombre }}" class="gato-foto" />
+            <img [src]="gato.imagen | imageUrl" alt="{{ gato.nombre }}" class="gato-foto" />
             <div class="card-body">
               <h4 class="card-title gato-nombre mb-3">{{ gato.nombre | titlecase }}</h4>
               <p><strong>Descripción:</strong> {{ gato.descripcion }}</p>
