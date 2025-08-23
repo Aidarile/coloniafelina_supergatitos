@@ -39,7 +39,7 @@
           <div class="card gato-card flex-fill d-flex flex-column">
             <!-- Imagen -->
             <div class="gato-foto-container text-center">
-              <img [src]="gato.imagen" alt="{{ gato.nombre }}" class="gato-foto">
+              <img [src]="gato.imagen | imageUrl" alt="{{ gato.nombre }}" class="gato-foto">
             </div>
 
           <!-- Info -->

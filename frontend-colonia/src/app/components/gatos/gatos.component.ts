@@ -3,10 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { Gato } from '../../common/interfacegatos';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ImageUrlPipe } from '../../pipes/image-url.pipe';
 
 @Component({
   selector: 'app-gatos',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ImageUrlPipe],
   templateUrl: './gatos.component.html',
   styleUrl: './gatos.component.css'
 })

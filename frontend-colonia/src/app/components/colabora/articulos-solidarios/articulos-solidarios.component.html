@@ -15,7 +15,7 @@
       @for (articulo of articulos; track articulo._id) {
         <div class="col-xl-3 col-md-4 mb-4 d-flex">
           <div class="card flex-fill d-flex flex-column">
-            <img [src]="articulo.imagen" class="card-img-top" [alt]="articulo.nombre">
+            <img [src]="articulo.imagen | imageUrl" class="card-img-top" [alt]="articulo.nombre">
             <div class="card-body d-flex flex-column justify-content-between">
               <div>
                 <h5 class="card-title">{{ articulo.nombre }}</h5>
