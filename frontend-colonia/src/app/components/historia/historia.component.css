@@ -4,23 +4,21 @@
     padding-top: 30px;
   }
   
+.historia-img {
+  width: 100%;
+  max-width: 450px;
+  display: block;
+  margin: 0 auto;
+}
+
+.historia-text {
+  padding: 10px 20px;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
   .historia-img {
-    width: 110%;
-    max-width: 450px;
+    margin-bottom: 20px;
   }
-  
-  .historia-text {
-    padding: 10px 20px;
-    text-align: center;
-  }
-  
-  @media (max-width: 768px) {
-    .historia-text {
-      text-align: center;
-    }
-  
-    .historia-img {
-      margin-bottom: 20px;
-    }
-  }
+}
   
