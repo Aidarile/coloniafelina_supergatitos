@@ -3,13 +3,14 @@ import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { Articulo } from '../../common/interfacearticulos';
 import { ArticulosService } from '../../services/articulos.service';
+import { ImageUrlPipe } from '../../pipes/image-url.pipe';
 
 declare var bootstrap: any;
 
 @Component({
   standalone: true,
   selector: 'app-articulos',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ImageUrlPipe],
   templateUrl: './articulos-admin.component.html',
   styleUrl: './articulos-admin.component.css'
 })

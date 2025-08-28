@@ -4,6 +4,7 @@ import { PanelComponent } from './panel/panel.component';
 import { GatosAdminComponent } from './gatos/gatos-admin.component';
 import { ArticulosAdminComponent } from './articulos/articulos-admin.component';
 import { AuthGuard } from '../auth/auth.guard';
+import { NoticiasAdminComponent } from './noticias/noticias-admin.component';
 
 const routes: Routes = [
   {
@@ -12,7 +13,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       { path: 'gatos', component: GatosAdminComponent },
-      { path: 'articulos', component: ArticulosAdminComponent }
+      { path: 'articulos', component: ArticulosAdminComponent },
+      { path: 'noticias', component: NoticiasAdminComponent }
     ]
   }
 ];

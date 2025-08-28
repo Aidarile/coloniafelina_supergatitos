@@ -6,10 +6,11 @@ import { FormsModule } from '@angular/forms';
 import { PanelComponent } from './panel/panel.component';
 import { GatosAdminComponent } from './gatos/gatos-admin.component';
 import { ArticulosAdminComponent } from './articulos/articulos-admin.component';
+import { NoticiasAdminComponent } from './noticias/noticias-admin.component';
 
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, AdminRoutingModule, FormsModule, PanelComponent, GatosAdminComponent, ArticulosAdminComponent]
+  imports: [CommonModule, AdminRoutingModule, FormsModule, PanelComponent, GatosAdminComponent, ArticulosAdminComponent, NoticiasAdminComponent]
 })
 export class AdminModule { }

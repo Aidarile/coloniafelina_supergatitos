@@ -3,13 +3,14 @@ import { Gato } from '../../common/interfacegatos';
 import { GatosService } from '../../services/gatos.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
+import { ImageUrlPipe } from '../../pipes/image-url.pipe';
 
 declare var bootstrap: any; 
 
 @Component({
   standalone: true,
   selector: 'app-gatos',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ImageUrlPipe],
   templateUrl: './gatos-admin.component.html',
   styleUrl: './gatos-admin.component.css'
 })

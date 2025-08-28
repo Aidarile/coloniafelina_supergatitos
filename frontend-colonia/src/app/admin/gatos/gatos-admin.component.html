@@ -114,7 +114,7 @@
     @for (gato of gatos; track gato._id) {
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img [src]="gato.imagen" class="card-img-top" [alt]="gato.nombre">
+          <img [src]="gato.imagen | imageUrl" class="card-img-top" [alt]="gato.nombre">
           <div class="card-body">
             <h5 class="card-title">{{ gato.nombre }}</h5>
             <p><strong>Apodo:</strong> {{ gato.apodo }}</p>

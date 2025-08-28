@@ -83,7 +83,7 @@
     @for (articulo of articulos; track articulo._id) {
       <div class="col-md-4">
         <div class="card h-100 shadow-sm">
-          <img [src]="articulo.imagen" class="card-img-top" [alt]="articulo.nombre">
+          <img [src]="articulo.imagen | imageUrl" class="card-img-top" [alt]="articulo.nombre">
           <div class="card-body">
             <h5 class="card-title">{{ articulo.nombre }}</h5>
             <p>{{ articulo.descripcion }}</p>
