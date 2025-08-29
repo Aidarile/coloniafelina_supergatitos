@@ -42,6 +42,7 @@ export class NoticiasAdminComponent implements OnInit {
   }
 
   guardarNoticia(form: NgForm) {
+    this.nuevaNoticia.contenido = this.nuevaNoticia.contenido.replace(/\n/g, '<br>');
     if (this.modoEdicion && this.noticiaEditando?._id) {
       this.noticiasService.actualizarNoticia(this.noticiaEditando._id, this.nuevaNoticia).subscribe(() => {
         this.cargarNoticias();
@@ -71,7 +72,10 @@ export class NoticiasAdminComponent implements OnInit {
   editarNoticia(noticia: any) {
     this.modoEdicion = true;
     this.noticiaEditando = noticia;
-    this.nuevaNoticia = { ...noticia };
+    this.nuevaNoticia = {
+      ...noticia,
+    contenido: noticia.contenido.replace(/<br>/g, '\n') // AÑADIR ESTA LÍNEA
+    };
     this.scrollToTop();
   }
 
